@@ -1,0 +1,51 @@
+{
+    "welcom0Title":"Gets things done with Tadween",
+    "welcom1Title":"Lorem ipsum dolor sit amet",
+    "welcom2Title":"consectetur adipiscing elit. Interdum",
+    "welcom3Title":"dictum tempus, interdum at dignissim",
+    "welcom4Title":"metus. Ultricies sed nunc.",
+    "started":"Get started",
+
+    "signUp1":"Welcome in Tadween!",
+    "signUp2":"Let’s help you meet up your tasks",
+    "Name":"Enter your full name",
+    "email":"Enter your email",
+    "password":"Enter password",
+    "phone":"phone",
+    "register":"Register",
+    "Haveaccount":"Already have an account ?",
+    "signIn":"Sign In",
+
+    "signInTitel":"Welcome Back!",
+    "forgotPassword":"Forgot Password",
+    "dontHave":"Dont't have an account ?",
+    "signUp":"Sign Up",
+
+    "empty":"This field can't be empty",
+    "lessPassword":"The password can't be less than 6 letters",
+
+    "Verification":"Verified your email",
+
+    "notes":"Your Notes",
+
+    "Content":"Content",
+    "Title":"Title",
+    "Add":"Add",
+    "Save":"Save",
+    "error":"Error",
+    "ok":"Ok",
+    "loading":"Loading",
+    "errorTitle":"Error",
+    "AddToFav":"Add to favorite",
+    "add_failed":"Failed to add",
+    "add_success":"Added successfully",
+
+    "firstName":"FirstName",
+    "lastName":"LastName",
+    "country":"Country",
+
+    "profileAddedSuccessfully":"profile Added Successfully",
+    "done":"Done",
+    "Search":"Search"
+
+}
