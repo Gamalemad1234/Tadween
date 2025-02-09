@@ -13,7 +13,7 @@ class EditPage extends StatefulWidget {
     required this.docId, 
     required this.oldTitle, 
     required this.oldContent,
-    required this.oldColor, // قيمة اللون المخزنة (int)
+    required this.oldColor, 
   });
 
   final String docId;
@@ -26,25 +26,21 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
-  // تغيير اسم المفتاح إلى formKey لتوضيح أنه مفتاح للنموذج
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
   
-  // متغير لتخزين اللون المختار (يتم تهيئته من اللون القديم)
   Color selectedColor = Colors.white;
   
   CollectionReference notes = FirebaseFirestore.instance.collection('notes');
 
-  /// دالة لتحديث الملاحظة في Firestore
   Future<void> updateNote() async {
-    // عرض الـ document ID للتأكد من أنه ليس فارغاً
     print("Document ID: ${widget.docId}");
     return notes.doc(widget.docId).update({
       'title': title.text,
       'content': content.text,
       'id': FirebaseAuth.instance.currentUser!.uid,
-      'color': selectedColor.value, // تحديث قيمة اللون كـ int
+      'color': selectedColor.value, 
     }).then((value) {
       print("Note Updated Successfully");
     }).catchError((error) {
@@ -52,7 +48,6 @@ class _EditPageState extends State<EditPage> {
     });
   }
 
-  /// أداة اختيار اللون التي تعرض مجموعة من الألوان
   Widget buildColorPicker() {
     List<Color> colors = [
         Colors.blue,
@@ -100,10 +95,8 @@ class _EditPageState extends State<EditPage> {
   @override
   void initState() {
     super.initState();
-    // تهيئة حقول النصوص بالبيانات القديمة
     title.text = widget.oldTitle;
     content.text = widget.oldContent;
-    // تهيئة اللون المختار باللون المخزن
     selectedColor = Color(widget.oldColor);
   }
 
@@ -215,7 +208,6 @@ class _EditPageState extends State<EditPage> {
                           if (formKey.currentState!.validate()) {
                             try {
                               await updateNote();
-                              // بعد التحديث ننتقل للصفحة الرئيسية
                               Navigator.of(context).pushAndRemoveUntil(
                                 MaterialPageRoute(
                                   builder: (context) => HomePage(),
