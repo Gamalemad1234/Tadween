@@ -13,16 +13,14 @@ class FavouritPage extends StatefulWidget {
 class _FavouritPageState extends State<FavouritPage> {
   final userId = FirebaseAuth.instance.currentUser!.uid;
 
-  // دالة لجلب العناصر المفضلة
   Stream<QuerySnapshot> getFavorites() {
     return FirebaseFirestore.instance
-        .collection('users') // مجموعة المستخدمين
-        .doc(userId) // وثيقة المستخدم
-        .collection('favorites') // مجموعة المفضلات
-        .snapshots(); // بث مباشر للبيانات
+        .collection('users') 
+        .doc(userId) 
+        .collection('favorites') 
+        .snapshots(); 
   }
 
-  // دالة لحذف عنصر من المفضلة
   Future<void> removeFromFavorites(String itemId) async {
     try {
       await FirebaseFirestore.instance
